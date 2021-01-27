@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Warmup</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Warm Up task
+      </h1>
+      <p class="subtitle">
+        Ui provided by <strong>Bulma</strong>!
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="subtitle">
+        1. Example of simple web component
+      </h2>
+    <div class="columns">
+      <div class="column is-half">
+          <user-welcome
+            color="red">
+            <span slot="username">John Smith</span>
+          </user-welcome>      
+      </div>
+      <div class="column is-half">
+        <user-welcome
+            color="green">
+        </user-welcome>      
+      </div>
+    </div>            
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="subtitle">
+        2. Listjs
+      </h2>
+        <div class="buttons">
+            <button class="button is-link" id="task2">Make list</button>
+        </div>
+        <div id="abc-list">
+            <ul class="list"></ul>
+        </div>        
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="subtitle">
+        3. Express nodeJS app with a REST route
+      </h2>
+      <pre>cd backend && node app.js</pre>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="subtitle">
+        4. Fetch backend response
+      </h2>
+        <div class="buttons">
+            <button class="button is-link" id="task4">Fetch</button>
+        </div>
+    </div>
+  </section>
+  
+  <script src="ui/UserWelcome.js"></script>
+  <script type="module">
+      import Task2 from './ui/Task2.js';
+      import Task4 from './ui/Task4.js';
+
+      new Task2();
+      new Task4();
+  </script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
+  </body>
+</html>
