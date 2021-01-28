@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Warmup</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <script src="https://d3js.org/d3.v4.js"></script>
   </head>
   <body>
   <section class="section">
@@ -24,16 +25,14 @@
         1. Example of simple web component
       </h2>
     <div class="columns">
-      <div class="column is-half">
+      <div class="column welcome is-full">
           <user-welcome
             color="red">
             <span slot="username">John Smith</span>
           </user-welcome>      
       </div>
-      <div class="column is-half">
-        <user-welcome
-            color="green">
-        </user-welcome>      
+      <div class="column d3 is-full is-hidden">
+        <d3-chart></d3-chart>      
       </div>
     </div>            
     </div>
@@ -72,15 +71,33 @@
         </div>
     </div>
   </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="subtitle">
+        8. Hide / show web components
+      </h2>
+        <div class="buttons">
+            <button class="button is-link" id="task8_1">Show Welcome Component</button>
+            <button class="button is-success" id="task8_2">Show D3 Component</button>
+        </div>
+    </div>
+  </section>
   
   <script src="ui/UserWelcome.js"></script>
+  <script src="ui/D3Chart.js"></script>
+
   <script type="module">
       import Task2 from './ui/Task2.js';
       import Task4 from './ui/Task4.js';
+      import Task8 from './ui/Task8.js';
 
       new Task2();
       new Task4();
+      new Task8();
   </script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
+
+
   </body>
 </html>
