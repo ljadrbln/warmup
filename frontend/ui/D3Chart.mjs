@@ -1,4 +1,4 @@
-class D3Chart extends HTMLElement {
+export class D3Chart extends HTMLElement {
     connectedCallback() {
         this.attachShadow( {mode: 'open'} );
         let color = this.getAttribute('color');
