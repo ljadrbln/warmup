@@ -83,7 +83,19 @@
         </div>
     </div>
   </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="subtitle">
+        9. Make error
+      </h2>
+        <div class="buttons">
+            <button class="button is-danger" onclick="wrongFunction()">Do error</button>
+        </div>
+    </div>
+  </section>  
   
+  <script src="ui/CustomComponent.js"></script>  
   <script src="ui/UserWelcome.js"></script>
   <script type="module" src="ui/D3Chart.mjs"></script>
 
@@ -95,6 +107,27 @@
       new Task2();
       new Task4();
       new Task8();
+
+      window.onerror = function myErrorHandler(errorMsg, url, lineNumber) {
+        let data = {};
+        let components = document.querySelectorAll('[hasLog]');
+        [...components].forEach( el => { data[el.tagName] = el.say(); });
+        
+        let info = {
+            ua: window.navigator.userAgent,
+            width: window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+            height: window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight,
+                
+            url: url,
+            message: errorMsg,
+            lineNumber: lineNumber,
+                
+            data: data
+        };
+            
+        console.log(info);
+      }
+
   </script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
 

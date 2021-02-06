@@ -1,4 +1,9 @@
-class UserWelcome extends HTMLElement {
+class UserWelcome extends CustomComponent {
+    constructor() {
+        super();
+        this.listen('constructor called');
+    }
+    
     connectedCallback() {
         this.attachShadow( {mode: 'open'} );
         let color = this.getAttribute('color');
@@ -14,6 +19,10 @@ class UserWelcome extends HTMLElement {
             </style>
             <p class="${color}">Welcome, <slot name="username">Anonimus</slot></p>
         `;
+        
+        this.listen('connectedCallback called');
+        
+        super.connectedCallback();
     }
 }
 
