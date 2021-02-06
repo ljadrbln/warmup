@@ -20,9 +20,15 @@ class UserWelcome extends CustomComponent {
             <p class="${color}">Welcome, <slot name="username">Anonimus</slot></p>
         `;
         
+        this.shadowRoot.querySelector('p').addEventListener('click', this.onParagraphClick.bind(this), false);
+        
         this.listen('connectedCallback called');
         
         super.connectedCallback();
+    }
+    
+    onParagraphClick() {
+        this.listen('paragraph clicked');
     }
 }
 
